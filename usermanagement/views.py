@@ -24,4 +24,6 @@ def login_page(request):
             messages.error(request,'username or password didnot match')
             return render(request, 'login.html')
         
-        
+def logout_session(request):
+    auth.logout(request)
+    return redirect('login_page')
